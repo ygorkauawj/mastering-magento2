@@ -17,7 +17,7 @@ class Logger implements ObserverInterface
     public function execute(\Magento\Framework\Event\Observer $observer)
     {
         $this->logger->debug(
-            $observer->getEvent()->getObject()->getName()
+            $observer->getEvent()->getName()
         );
     }
 }
