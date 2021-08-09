@@ -5,15 +5,15 @@
             <item name="provider" xsi:type="string">mastering_items_grid.mastering_items_grid_data_source</item>
             <item name="deps" xsi:type="string">mastering_items_grid.mastering_items_grid_data_source</item>
         </item>
-    <item name="spinner" xsi:type="string">mastering_items_columns</item>
-    <item name="buttons" xsi:type="array">
-        <item name="add" xsi:type="array">
-            <item name="name" xsi:type="string">add</item>
-            <item name="label" xsi:type="string" translate="true">Add Item</item>
-            <item name="class" xsi:type="string">primary</item>
-            <item name="url" xsi:type="string">*/item/new</item>
+        <item name="spinner" xsi:type="string">mastering_items_columns</item>
+        <item name="buttons" xsi:type="array">
+            <item name="add" xsi:type="array">
+                <item name="name" xsi:type="string">add</item>
+                <item name="label" xsi:type="string" translate="true">Add Item</item>
+                <item name="class" xsi:type="string">primary</item>
+                <item name="url" xsi:type="string">*/item/new</item>
+            </item>
         </item>
-    </item>
     </argument>
     <dataSource name="mastering_items_grid_data_source">
         <argument name="dataProvider" xsi:type="configurableObject">
@@ -36,20 +36,21 @@
         <filterSearch name="fulltext"/>
         <filters name="listing_filters"/>
         <paging name="listing_paging"/>
+        <!-- <frontendLink name="frontend_link"/> -->
     </listingToolbar>
     <columns name="mastering_items_columns">
         <argument name="data" xsi:type="array">
             <item name="config" xsi:type="array">
-            <item name="childDefaults" xsi:type="array">
-                <item name="fieldAction" xsi:type="array">
-                    <item name="provider" xsi:type="string">mastering_items_grid.mastering_items_grid.mastering_items_columns.actions</item>
-                    <item name="target" xsi:type="string">applyAction</item>
-                    <item name="params" xsi:type="array">
-                        <item name="1" xsi:type="string">${ $.$data.rowIndex }</item>
-                        <item name="0" xsi:type="string">view</item>
+                <item name="childDefaults" xsi:type="array">
+                    <item name="fieldAction" xsi:type="array">
+                        <item name="provider" xsi:type="string">mastering_items_grid.mastering_items_grid.mastering_items_columns.actions</item>
+                        <item name="target" xsi:type="string">applyAction</item>
+                        <item name="params" xsi:type="array">
+                            <item name="0" xsi:type="string">view</item>
+                            <item name="1" xsi:type="string">${ $.$data.rowIndex }</item>
+                        </item>
                     </item>
                 </item>
-            </item>
             </item>
         </argument>
         <selectionsColumn name="ids">
@@ -67,11 +68,27 @@
                 </item>
             </argument>
         </column>
-        <column name="description">
+        <column name="price">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="filter" xsi:type="string">float</item>
+                    <item name="label" xsi:type="string" translate="true">Price</item>
+                </item>
+            </argument>
+        </column>
+        <column name="quantity">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
                     <item name="filter" xsi:type="string">text</item>
-                    <item name="label" xsi:type="string" translate="true">Description</item>
+                    <item name="label" xsi:type="string" translate="true">Quantity</item>
+                </item>
+            </argument>
+        </column>
+        <column name="tax">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="filter" xsi:type="string">text</item>
+                    <item name="label" xsi:type="string" translate="true">Tax amount</item>
                 </item>
             </argument>
         </column>

@@ -1,4 +1,5 @@
 <?php
+/*
 namespace Mastering\SampleModule\Setup;
 
 use Magento\Framework\Setup\UpgradeSchemaInterface;
@@ -39,3 +40,4 @@ class UpgradeSchema implements UpgradeSchemaInterface
     }
 
 }
+*/

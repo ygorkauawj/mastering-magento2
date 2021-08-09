@@ -2,9 +2,14 @@
 /** @var \Mastering\SampleModule\Block\Hello $block */
 ?>
 
-<?php echo $block->getLabel(); ?>
+<!-- <?php //echo $block->getLabel(); ?> -->
+<h1 style="text-align: center; font-weight: bold">Itens disponíveis no mercadinho do Ygor!</h1> </br>
 <?php foreach ($block->getItems() as $item) : ?>
 <p>
-    <?php echo $item->getName(); ?>: <?php echo $item->getDescription()?> 
+    <h2><?php echo $item->getName(); ?> - preço: R$<?php echo $item->getPrice()?></h2>
+    <h3>Quantidade disponível: <?php echo $item->getQuantity(); ?></h3>
+    total de taxa no produto: <?php echo $item->getTax(); ?>
+    </br>
+    <hr>
 </p>
 <?php endforeach; ?>

@@ -1,4 +1,5 @@
 <?php
+/**
 namespace Mastering\SampleModule\Setup;
 
 use Magento\Eav\Setup\EavSetup;
@@ -25,3 +26,4 @@ class UpgradeData implements UpgradeDataInterface
         $setup->endSetup();
     }
 }
+*/

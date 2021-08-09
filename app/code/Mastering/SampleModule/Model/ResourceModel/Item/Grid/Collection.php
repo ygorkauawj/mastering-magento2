@@ -1,4 +1,5 @@
 <?php
+
 namespace Mastering\SampleModule\Model\ResourceModel\Item\Grid;
 
 use Magento\Framework\Data\Collection\Db\FetchStrategyInterface as FetchStrategy;
