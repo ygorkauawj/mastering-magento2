@@ -9,15 +9,12 @@ class Logger implements ObserverInterface
 {
     private $logger;
 
-    /**
-     * @codeCoverageIgnore
-     */
     public function __construct(LoggerInterface $logger)
     {
         $this->logger = $logger;
     }
 
-    public function execute(\Magento\Framework\Event\Observer $observer)
+    public function execute(Observer $observer)
     {
         $this->logger->debug(
             $observer->getEvent()->getName()

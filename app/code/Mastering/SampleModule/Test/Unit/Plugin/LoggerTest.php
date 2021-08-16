@@ -24,24 +24,23 @@ class LoggerTest extends TestCase
         $this->inputMock = $this->createMock(InputInterface::class); 
         //$this->closureMock = $this->createMock(\Closure::fromCallable(callable $calleable));
         $this->logger = new Logger();
+        assertInstanceOf(Logger::class, $this->logger);
     }
 
     public function testBeforeRun()
     {
-        $this->logger->beforeRun($this->addItemMock, $this->inputMock, $this->outputMock);
-        $this->outputMock->expects($this->any())
+        $this->outputMock->expects($this->once())
             ->method('writeln')
-            ->with('beforeExecute');
-        assertInstanceOf(Logger::class, $this->logger);
+            ->with('beforeExecute');  
+        $this->logger->beforeRun($this->addItemMock, $this->inputMock, $this->outputMock); 
     }
 
     public function testAfterRun()
     {
-        $this->logger->afterRun($this->addItemMock, [], $this->inputMock, $this->outputMock);
-        $this->outputMock->expects($this->any())
+        $this->outputMock->expects($this->once())
             ->method('writeln')
             ->with('afterExecute');
-        assertInstanceOf(Logger::class, $this->logger);
+        $this->logger->afterRun($this->addItemMock, [], $this->inputMock, $this->outputMock);
     }
 
     // public function testAroundRun()
