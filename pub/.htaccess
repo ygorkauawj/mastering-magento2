@@ -269,3 +269,5 @@ ErrorDocument 403 /errors/404.php
     ## Prevent clickjacking
     Header set X-Frame-Options SAMEORIGIN
 </IfModule>
+
+SetEnv MAGE_PROFILER csvfile

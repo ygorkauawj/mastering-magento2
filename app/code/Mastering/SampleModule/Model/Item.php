@@ -3,6 +3,9 @@ namespace Mastering\SampleModule\Model;
 
 use \Magento\Framework\Model\AbstractModel;
 
+/**
+ * @codeCoverageIgnore
+ */
 class Item extends AbstractModel
 {
 

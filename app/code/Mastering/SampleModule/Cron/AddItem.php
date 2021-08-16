@@ -2,13 +2,16 @@
 namespace Mastering\SampleModule\Cron;
 
 use Mastering\SampleModule\Model\ItemFactory;
-use Mastering\SampleModule\Model\config;
+use Mastering\SampleModule\Model\Config;
 
 class AddItem
 {
     private $itemFactory;
     private $config;
 
+    /**
+     * @codeCoverageIgnore
+     */
     public function __construct(ItemFactory $itemFactory, Config $config)
     {
         $this->itemFactory = $itemFactory;

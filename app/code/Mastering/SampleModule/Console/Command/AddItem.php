@@ -18,6 +18,9 @@ class AddItem extends Command
 
     private $itemFactory;
 
+    /**
+     * @codeCoverageIgnore
+     */
     public function __construct(ItemFactory $itemFactory, ManagerInterface $eventManager)
     {
         $this->itemFactory = $itemFactory;

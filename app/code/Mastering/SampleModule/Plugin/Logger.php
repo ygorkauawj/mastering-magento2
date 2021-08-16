@@ -20,6 +20,9 @@ class Logger
         $output->writeln('beforeExecute');
     }
 
+    /**
+     * @codeCoverageIgnore
+     */
     public function aroundRun(
         AddItem $command,
         \Closure $proceed,
@@ -32,8 +35,12 @@ class Logger
         $this->output = $output;
     }
 
-    public function afterRun(AddItem $command)
-    {
-        $this->output->writeln('afterExecute');
+    public function afterRun(
+        AddItem $command,
+        $result,
+        InputInterface $input,
+        OutputInterface $output
+    ) {
+        $output->writeln('afterExecute');
     }
 }

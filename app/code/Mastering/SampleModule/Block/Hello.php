@@ -4,8 +4,8 @@ namespace Mastering\SampleModule\Block;
 use Magento\Framework\Event\Manager;
 use Mastering\SampleModule\Model\ResourceModel\Item\Collection;
 use Mastering\SampleModule\Model\ResourceModel\Item\CollectionFactory;
-use \Magento\Framework\View\Element\Template\Context;
-use Mastering\SampleModule\Model\configLog;
+use Magento\Framework\View\Element\Template\Context;
+use Mastering\SampleModule\Model\ConfigLog;
 
 class Hello extends \Magento\Framework\View\Element\Template
 {

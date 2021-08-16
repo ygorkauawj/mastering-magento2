@@ -5,6 +5,9 @@ use Magento\Framework\Model\ResourceModel\Db\Collection\AbstractCollection;
 use Mastering\SampleModule\Model\Item;
 use Mastering\SampleModule\Model\ResourceModel\Item as ItemResource;
 
+/**
+ * @codeCoverageIgnore
+ */
 class Collection extends AbstractCollection
 {
     protected $_idFieldName = 'id';

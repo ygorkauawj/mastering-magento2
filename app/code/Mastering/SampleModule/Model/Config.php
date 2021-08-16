@@ -3,7 +3,7 @@ namespace Mastering\SampleModule\Model;
 
 use Magento\Framework\App\Config\ScopeConfigInterface;
 
-class config
+class Config
 {
     const XML_PATH_ENABLED = 'mastering/log/enable';
 
